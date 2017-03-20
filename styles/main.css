@@ -1,0 +1,70 @@
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.half {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.half.stretch {
+  flex: 3;
+}
+
+.hotel-image {
+  max-width: 400px;
+}
+
+.acf-map {
+  border: #ccc solid 1px;
+  height: 400px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.flex .card-img-top {
+  height: 100%;
+}
+
+.flex .card-image {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.flex .card {
+  border: 0;
+  border-radius: 0;
+  display: block;
+  width: 30%;
+}
+
+.flex .card-block {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex .card-block .card-title {
+  line-height: inherit;
+  margin: 0;
+}
+
+.flex a:hover .card-image img {
+  opacity: .7;
+}
+
+@media (max-width: 991px) {
+  .flex .card {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .flex .card img {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
