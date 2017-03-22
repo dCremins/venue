@@ -11,6 +11,9 @@ Author URI: http://octopusoddments.com
 
 // Add all files in lib folder into array
 $include = [
+  '/lib/add-template.php',      // Venue and Hotels Page Template
+  '/lib/venue-options.php',     // Venue and Hotels Page Template
+  '/lib/venue-widget.php',              // Venue and Hotels Page Template
 ];
 
 // Require Once each file in the array
@@ -22,7 +25,12 @@ foreach ($include as $file) {
 }
 unset($file, $filepath);
 
-/* Add main.css */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('proceedings_css', plugins_url('/styles/main.css', __FILE__));
+     wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD2XX1_cJpF4bIxqdJssq9Ekb-w3hGIN5U', array(), '3', true);
+     wp_enqueue_script('google-map-init', plugins_url('/js/map-helper.js', __FILE__), array('google-map', 'jquery'), '0.1', true);
+     wp_enqueue_style('venue_css', plugins_url('/styles/main.css', __FILE__));
+});
+
+add_action('acf/init', function () {
+    acf_update_setting('google_api_key', 'AIzaSyD2XX1_cJpF4bIxqdJssq9Ekb-w3hGIN5U');
 });
