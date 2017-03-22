@@ -4,16 +4,17 @@ Plugin Name: ICOET Venue and Hotels
 GitHub Plugin URI: https://github.com/dcremins/venue
 GitHub Branch: master
 Description: Venue and Hotels page and widget for ICOET website use
-Version: 0.0.1
+Version: 0.0.2
 Author: Devin Cremins
 Author URI: http://octopusoddments.com
 */
 
 // Add all files in lib folder into array
 $include = [
+  '/lib/add-acf.php',           // Add Advanced Custom Fields
   '/lib/add-template.php',      // Venue and Hotels Page Template
-  '/lib/venue-options.php',     // Venue and Hotels Page Template
-  '/lib/venue-widget.php',              // Venue and Hotels Page Template
+  '/lib/venue-options.php',     // Venue and Hotels Options Page
+  '/lib/venue-widget.php',      // Venue and Hotels Widget
 ];
 
 // Require Once each file in the array
